@@ -398,7 +398,7 @@ h1 {
   }
 }
 
-@media (max-width: 650px) and (orientation: portrait) and (pointer: coarse) {
+@media (max-width: 1800px) and (orientation: portrait) and (pointer: coarse) {
   .orientation-gate {
     position: fixed;
     inset: 0;
