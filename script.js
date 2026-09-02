@@ -2,7 +2,7 @@ const places = {
   pub: {
     title: "Puben",
     image: "assets/pub.jpg",
-    description: "Ett varmt ljus strålar från pubens färgglada sken. En varm plats i en kall värld, där det finns plats för alla.",
+    description: "Ett varmt ljus strålar från pubens färgglada sken. En varm plats i en kall värld, där det finns plats för alla. Klicka dig fram till baren, så kanske du får en drink?",
   },
   bar: {
     title: "Baren",
@@ -34,6 +34,16 @@ const closeButton = document.querySelector(".close-button");
 const continueButton = document.querySelector(".continue-button");
 const barHotspot = document.querySelector("#bar-hotspot");
 let previouslyFocused;
+
+function preloadImages() {
+  const imageSources = new Set(["assets/base_image.jpg", ...Object.values(places).map((place) => place.image)]);
+
+  imageSources.forEach((source) => {
+    const image = new Image();
+    image.decoding = "async";
+    image.src = source;
+  });
+}
 
 function openPlace(placeId) {
   const place = places[placeId];
@@ -70,3 +80,5 @@ modal.addEventListener("click", (event) => {
 document.addEventListener("keydown", (event) => {
   if (event.key === "Escape" && !modal.hidden) closePlace();
 });
+
+window.addEventListener("load", preloadImages, { once: true });
