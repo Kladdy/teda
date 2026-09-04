@@ -130,6 +130,12 @@ h1 {
 .hotspot--sauna { left: 71%; top: 67%; }
 .hotspot--guest-house { left: 45%; top: 67%; }
 
+.hotspot--guest-house .hotspot-label {
+  top: calc(50% + 2.5rem);
+  bottom: auto;
+  transform: translateY(-0.25rem);
+}
+
 .hotspot-ring,
 .hotspot-dot {
   position: absolute;
